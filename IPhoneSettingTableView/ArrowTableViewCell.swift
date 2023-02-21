@@ -22,13 +22,12 @@ class ArrowTableViewCell: UITableViewCell {
                 image.image = UIImage(named: model?.image ?? "")
             }
             message.image = UIImage(systemName: model?.message.rawValue ?? "")?.withTintColor(.red, renderingMode: .alwaysOriginal)
-            wrapper.backgroundColor = model?.imageColor
+            wrapper.backgroundColor = UIColor(named: model?.imageColor ?? "")
         }
     }
     
     
     //MARK: - Outlets
-
     private let title: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -61,20 +60,16 @@ class ArrowTableViewCell: UITableViewCell {
     
     
     //MARK: - Init
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setupHierarchy()
         setupLayout()
-
         accessoryType = .disclosureIndicator
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     //MARK: - Setups
     

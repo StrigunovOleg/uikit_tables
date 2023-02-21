@@ -7,12 +7,11 @@
 
 
 import Foundation
-import UIKit
 
 struct SettingModel {
     var title: String
     var image: String
-    var imageColor: UIColor
+    var imageColor: String
     var status: ArgumentStatus
     var message: Message
     var cellType: CellType
